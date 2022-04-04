@@ -9,8 +9,6 @@ on:
   pull_request:
 permissions:
   contents: read
-  # Optional: allow read access to pull request. Use with `only-new-issues` option.
-  # pull-requests: read
 jobs:
   golangci:
     name: lint
@@ -18,10 +16,6 @@ jobs:
     steps:
       - uses: actions/setup-go@v2
       - uses: actions/checkout@v2
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v2
-        with:
-          version: latest
 
       - name: Verify dependencies
         run: go mod verify
