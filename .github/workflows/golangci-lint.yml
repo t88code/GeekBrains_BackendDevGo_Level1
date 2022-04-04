@@ -29,10 +29,10 @@ jobs:
         run: go mod verify
 
       - name: Build
-        run: go build -v ./cmd/app/main.go
+        run: go build -v ./...
 
       - name: Run go vet
-        run: go vet ./cmd/app/main.go
+        run: go vet ./...
 
       - name: Run tests
-        run: go test -race -vet=off ./cmd/app/main.go
+        run: go test -race -vet=off ./...
