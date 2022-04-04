@@ -19,9 +19,10 @@ jobs:
       - uses: actions/setup-go@v2
       - uses: actions/checkout@v2
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v2 ./...
+        uses: golangci/golangci-lint-action@v2
         with:
-          version: v1.29
+          version: latest
+          working-directory: ./cmd/app
 
       - name: Verify dependencies
         run: go mod verify
